@@ -27,6 +27,24 @@ object ScalaFunctions {
       x * x * x
     }
   }
+
+  //default values as a agruments in function
+  def default(x: Int = 40, y: Int = 50): Int = {
+    x + y
+  }
+
+  def default1(x: Int = 40, y: Int): Int = {
+    x + y
+  }
+
+  //no return functions
+  def print(x: Int, y: Int): Unit = { // unit means function will not return anything same like void in java
+    println(x + y)
+  }
+
+  //Anonymous functions
+  var anon = (x: Int, y: Int) => x + y
+
   def main(args: Array[String]) = {
     println("Add function result " + add(10, 20))
     println("Subtract function result " + subtract(10, 20))
@@ -34,5 +52,9 @@ object ScalaFunctions {
     println("Divide function result " + divide(10, 20))
     println("Square function result " + square(10))
     println("Cube function result " + Math.cube(9))
+    println("Default values function result " + default())
+    println("Default values function result " + default1(40, 10))
+    print(50, 50)
+    println("Anonymous Function result " + anon(60, 60))
   }
 }
